@@ -19,6 +19,7 @@
   <img src="https://img.shields.io/badge/-Django-092E20.svg?logo=django&style=for-the-badge">
   -->
   <!-- バックエンドの言語一覧 -->
+  <img src="https://img.shields.io/badge/-Node.js-4285F4.svg?logo=node.js&style=for-the-badge">
    <!--
   <img src="https://img.shields.io/badge/-GAS-4285F4.svg?logo=googleappsscript&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Python-F2C63C.svg?logo=python&style=for-the-badge">
