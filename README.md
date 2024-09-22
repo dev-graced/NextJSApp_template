@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ptInfoApp
 
-## Getting Started
+患者情報を集約して、検索／表示する webアプリ
 
-First, run the development server:
+## 使用技術一覧
+<!-- シールド一覧 -->
+<!-- 該当するプロジェクトの中から任意のものを選ぶ-->
+<!-- <img src="https://img.shields.io/badge/{バッジ左の文字}-{バッジ右の文字}-{色}.svg?logo={ロゴ名}&style=for-the-badge"> -->
+<!-- ロゴは simpleIcon https://simpleicons.org/ から選べる -->
+<p style="display: inline">
+  <!-- フロントエンドのフレームワーク一覧 -->
+  <!--<img src="https://img.shields.io/badge/-Node.js-000000.svg?logo=node.js&style=for-the-badge"> -->
+  <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=for-the-badge">
+  <!-- <img src="https://img.shields.io/badge/-TailwindCSS-000000.svg?logo=tailwindcss&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> 
+  -->
+  <!-- バックエンドのフレームワーク一覧 -->
+  <!--
+  <img src="https://img.shields.io/badge/-Django-092E20.svg?logo=django&style=for-the-badge">
+  -->
+  <!-- バックエンドの言語一覧 -->
+  <img src="https://img.shields.io/badge/-Node.js-4285F4.svg?logo=node.js&style=for-the-badge">
+   <!--
+  <img src="https://img.shields.io/badge/-GAS-4285F4.svg?logo=googleappsscript&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Python-F2C63C.svg?logo=python&style=for-the-badge">
+  -->
+  <!-- ミドルウェア一覧 -->
+  <!--
+  <img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-MySQL-4479A1.svg?logo=mysql&style=for-the-badge&logoColor=white">
+  <img src="https://img.shields.io/badge/-Gunicorn-199848.svg?logo=gunicorn&style=for-the-badge&logoColor=white">
+  -->
+  <!-- インフラ一覧 -->
+  <!--
+  <img src="https://img.shields.io/badge/-Google%20cloud-4285F4.svg?logo=google-cloud&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-githubactions-FFFFFF.svg?logo=github-actions&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Amazon%20aws-232F3E.svg?logo=amazon-aws&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-terraform-20232A?style=for-the-badge&logo=terraform&logoColor=844EBA">
+  -->
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 目次
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## プロジェクトの概要
+患者情報を集約して、検索／表示する webアプリ。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- プロジェクトの詳細が記載された資料のリンク
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 必要な環境変数やコマンド一覧
+## ディレクトリ構成
+## 開発環境の構築方法
+### Node.js, npm
+github codespace を使う場合、もともとインストールされている
 
-## Learn More
+### Next.js
+1. create-next-app <アプリ名>
+    色々設定を聞かれるが、src directory は No, App router は Yes を選択する。それ以外はお好みで
+2. <アプリ名>フォルダの中身をすべてリポジトリのフォルダの直下に移動し、<アプリ名>フォルダを削除する
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## トラブルシューティング
