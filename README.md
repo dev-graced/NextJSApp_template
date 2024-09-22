@@ -60,4 +60,12 @@ github codespace を使う場合、もともとインストールされている
     色々設定を聞かれるが、src directory は No, App router は Yes を選択する。それ以外はお好みで
 2. <アプリ名>フォルダの中身をすべてリポジトリのフォルダの直下に移動し、<アプリ名>フォルダを削除する
 
+### mongoDB
+** Security -> QuickStart ** 
+1. Where would you like to connect from? : My Local Environment
+2. Add entries to your IP Access List: IPAddress: 0.0.0.0/0, Description: Access from anywhere
+
+** Overview **
+1. Connect to your application -> Drivers -> Select your driver and version: Node.js
+
 ## トラブルシューティング
