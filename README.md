@@ -68,4 +68,7 @@ github codespace を使う場合、もともとインストールされている
 ** Overview **
 1. Connect to your application -> Drivers -> Select your driver and version: Node.js
 
+### mongoose
+npm install mongoose
+
 ## トラブルシューティング
