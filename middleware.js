@@ -9,8 +9,8 @@ export async function middleware(request) {
      * リクエストに格納されたトークンを取得
      * @type {String}
      */
-    const token = await request.headers.get("Authorization")?.split(" ")[1];
-    // const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1bW15QGdtYWlsLmNvbSIsImV4cCI6MTcyNzE4NDg2N30.B4HxKPckCxAbkUfQ5ptDgL27lALAJtX2R4fFLH4TIIY";
+    // const token = await request.headers.get("Authorization")?.split(" ")[1];
+    const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1bW15MUBnbWFpbC5jb20iLCJleHAiOjE3MjcyNzAyMjZ9.g1lUCgRc7b7YuC7dNXKtGABpn4ijcoiPfS0mKPxZD7I";
 
     if(!token){
         return NextResponse.json({message:"トークンがありません"});
