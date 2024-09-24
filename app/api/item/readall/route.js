@@ -16,3 +16,6 @@ export async function GET() {
         return NextResponse.json({message: "アイテム読み取り失敗（オール）"});
     }
 }
+
+/** データ取得を毎回行う Next.js の設定 */
+export const revalidate = 0;
