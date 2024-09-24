@@ -33,6 +33,7 @@
   <img src="https://img.shields.io/badge/-MongoDB-47A248.svg?logo=mongodb&style=for-the-badge">
 
   <!-- インフラ一覧 -->
+  <img src="https://img.shields.io/badge/-vercel-000000.svg?logo=vercel&style=for-the-badge">
   <!--
   <img src="https://img.shields.io/badge/-Google%20cloud-4285F4.svg?logo=google-cloud&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=for-the-badge">
