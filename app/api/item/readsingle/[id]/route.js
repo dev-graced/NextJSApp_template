@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
-
 import connectDB from "../../../../utils/database";
-
 import {ItemModel} from "../../../../utils/schemaModels";
 
 export async function GET(request,context) {
@@ -19,3 +17,6 @@ export async function GET(request,context) {
         return NextResponse.json({message: "アイテム読み取り失敗（single）"});
     }
 }
+
+/** データ取得を毎回行う Next.js の設定 */
+export const revalidate = 0;
