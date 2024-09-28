@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
-
 import connectDB from "../../../utils/database";
-
 import {ItemModel} from "../../../utils/schemaModels";
 
 export async function GET() {
@@ -11,7 +9,8 @@ export async function GET() {
 
         const allItems = await ItemModel.find();
 
-        return NextResponse.json({message: "アイテム読み取り成功（オール）",allItems: allItems});
+        return NextResponse.json({message: "アイテム読み取り成功（オール）", allItems: allItems});
+
     }catch{
         return NextResponse.json({message: "アイテム読み取り失敗（オール）"});
     }

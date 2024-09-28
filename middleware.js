@@ -27,6 +27,8 @@ export async function middleware(request) {
         // console.log("decodedJwt:",decodedJwt);
 
         return NextResponse.next();
+
+        
     }catch{
         return NextResponse.json({message:"トークンが正しくないので、ログインしてください"});
     }
