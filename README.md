@@ -34,6 +34,7 @@
 
   <!-- インフラ一覧 -->
   <img src="https://img.shields.io/badge/-vercel-000000.svg?logo=vercel&style=for-the-badge">
+
   <!--
   <img src="https://img.shields.io/badge/-Google%20cloud-4285F4.svg?logo=google-cloud&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=for-the-badge">
@@ -46,6 +47,7 @@
 ## 目次
 
 ## プロジェクトの概要
+
 患者情報を集約して、検索／表示する webアプリ。
 
 - プロジェクトの詳細が記載された資料のリンク
