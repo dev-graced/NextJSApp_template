@@ -1,6 +1,6 @@
 # ptInfoApp
 
-訪問記録表作成用スクリプト
+患者情報を集約して、検索／表示する webアプリ
 
 ## 使用技術一覧
 <!-- シールド一覧 -->
@@ -30,7 +30,11 @@
   <img src="https://img.shields.io/badge/-MySQL-4479A1.svg?logo=mysql&style=for-the-badge&logoColor=white">
   <img src="https://img.shields.io/badge/-Gunicorn-199848.svg?logo=gunicorn&style=for-the-badge&logoColor=white">
   -->
+  <img src="https://img.shields.io/badge/-MongoDB-47A248.svg?logo=mongodb&style=for-the-badge">
+
   <!-- インフラ一覧 -->
+  <img src="https://img.shields.io/badge/-vercel-000000.svg?logo=vercel&style=for-the-badge">
+
   <!--
   <img src="https://img.shields.io/badge/-Google%20cloud-4285F4.svg?logo=google-cloud&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=for-the-badge">
@@ -43,10 +47,39 @@
 ## 目次
 
 ## プロジェクトの概要
-- プロジェクトの概要
+
+患者情報を集約して、検索／表示する webアプリ。
+
 - プロジェクトの詳細が記載された資料のリンク
 
 ## 必要な環境変数やコマンド一覧
 ## ディレクトリ構成
 ## 開発環境の構築方法
+### Node.js, npm
+github codespace を使う場合、もともとインストールされている
+
+### Next.js
+1. create-next-app <アプリ名>
+    色々設定を聞かれるが、src directory は No, App router は Yes を選択する。それ以外はお好みで
+2. <アプリ名>フォルダの中身をすべてリポジトリのフォルダの直下に移動し、<アプリ名>フォルダを削除する
+
+### mongoDB
+** Security -> QuickStart ** 
+1. Where would you like to connect from? : My Local Environment
+2. Add entries to your IP Access List: IPAddress: 0.0.0.0/0, Description: Access from anywhere
+
+** Overview **
+1. Connect to your application -> Drivers -> Select your driver and version: Node.js
+
+### mongoose 
+mongoDB の ODM
+```
+npm install mongoose
+```
+
+### JSON Web Token
+```
+npm install jose
+```
+
 ## トラブルシューティング
