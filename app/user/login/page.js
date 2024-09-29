@@ -13,7 +13,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const response = await fetch("https://expert-broccoli-jv79rjjwxpp256jw-3000.app.github.dev/api/user/login",{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user/login`,{
 
                 method:"POST",
                 headers:{

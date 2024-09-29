@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const getSingleItem = async(id)=>{
-    const response = await fetch(`https://expert-broccoli-jv79rjjwxpp256jw-3000.app.github.dev/api/item/readsingle/${id}`,{cache: "no-store"});
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`,{cache: "no-store"});
     
     const jsonData = await response.json();
   

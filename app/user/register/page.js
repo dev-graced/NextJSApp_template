@@ -16,7 +16,7 @@ const Register = ()=>{
         e.preventDefault();
 
         try{
-            const response = await fetch("https://expert-broccoli-jv79rjjwxpp256jw-3000.app.github.dev/api/user/register",{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user/register`,{
 
                 method:"POST",
                 headers:{

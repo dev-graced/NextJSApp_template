@@ -22,7 +22,7 @@ const CreateItem = ()=>{
         e.preventDefault()
 
         try{
-            const response = await fetch("https://expert-broccoli-jv79rjjwxpp256jw-3000.app.github.dev/api/item/create",{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/create`,{
                 method: "POST",
                 headers:{
                     "Accept": "application/json",
