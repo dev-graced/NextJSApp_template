@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import useAuth from "@/app/utils/useAuth"
 
 const UpdateItem = (context)=>{
 
@@ -12,6 +13,8 @@ const UpdateItem = (context)=>{
     const [email,setEmail] = useState("")
 
     const router = useRouter()
+
+    const loginUserEmail = useAuth()
 
     useEffect(() => {
         const getSingleItem = async(id)=>{
@@ -49,7 +52,7 @@ const UpdateItem = (context)=>{
                     image: image,
                     price: price,
                     description: description,
-                    email: "dummy1@gmail.com"
+                    email: loginUserEmail
                 })
             })
 
@@ -66,31 +69,39 @@ const UpdateItem = (context)=>{
         }
     }
 
-    return (
-        <div>
-            <h1>アイテム編集</h1>
-
-            <form onSubmit={handleSubmit}>
-                <input value={title} onChange={(e)=>
-                    setTitle(e.target.value)
-                } type="text" name="title" placeholder="アイテム名" required/>
-
-                <input value={price} onChange={(e)=>
-                    setPrice(e.target.value)
-                } type="text" name="price" placeholder="価格" required/>
-
-                <input value={image} onChange={(e)=>
-                    setImage(e.target.value)
-                }type="text" name="image" placeholder="画像" required/>
-
-                <textarea value={description} onChange={(e)=>
-                    setDescription(e.target.value)
-                }name="description" placeholder="商品説明" required></textarea>
-
-                <button>編集</button>
-            </form>
-        </div>
-    )
+    if(loginUserEmail){
+        if(loginUserEmail === email){
+            return (
+                <div>
+                    <h1>アイテム編集</h1>
+        
+                    <form onSubmit={handleSubmit}>
+                        <input value={title} onChange={(e)=>
+                            setTitle(e.target.value)
+                        } type="text" name="title" placeholder="アイテム名" required/>
+        
+                        <input value={price} onChange={(e)=>
+                            setPrice(e.target.value)
+                        } type="text" name="price" placeholder="価格" required/>
+        
+                        <input value={image} onChange={(e)=>
+                            setImage(e.target.value)
+                        }type="text" name="image" placeholder="画像" required/>
+        
+                        <textarea value={description} onChange={(e)=>
+                            setDescription(e.target.value)
+                        }name="description" placeholder="商品説明" required></textarea>
+        
+                        <button>編集</button>
+                    </form>
+                </div>
+            )
+        }else{
+            return <h1>権限がありません</h1>
+        }
+    }
+    
+    
 }
 
 export default UpdateItem
