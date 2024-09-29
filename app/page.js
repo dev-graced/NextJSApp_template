@@ -21,8 +21,8 @@ const ReadAllItems = async() => {
   // console.log(allItems);
 
   return(
-    <div>
-      {/* <h1 className="h1-style">こんにちは</h1> */}
+    <div className="grid-container-in">
+
       {allItems.map(item => 
         <Link href={`/item/readsingle/${item._id}`} key={item._id}>
           <Image src={item.image} width={750} height={500} alt={item.title} priority/>

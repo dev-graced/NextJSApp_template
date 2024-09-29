@@ -41,7 +41,7 @@ const Register = ()=>{
 
     return(
         <div>
-            <h1>ユーザー登録</h1>
+            <h1 className="page-title">ユーザー登録</h1>
 
             <form onSubmit={handleSubmit}> 
                 <input value={name} onChange={(e) => {
