@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const getSingleItem = async(id)=>{
     const response = await fetch(`https://expert-broccoli-jv79rjjwxpp256jw-3000.app.github.dev/api/item/readsingle/${id}`,{cache: "no-store"});
@@ -28,6 +29,12 @@ const ReadSingleItem = async(context)=>{
                 <h2>{singleItem.price}</h2>
                 <br/>
                 <p>{singleItem.description}</p>
+
+                <div>
+                    <Link href={`/item/update/${singleItem._id}`}>アイテム編集</Link>
+                    <br/>
+                    <Link href={`/item/delete/${singleItem._id}`}>アイテム削除</Link>
+                </div>
             </div>
         </div>
     )
