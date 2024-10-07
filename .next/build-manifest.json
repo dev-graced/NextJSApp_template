@@ -8,7 +8,12 @@
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js"
   ],
-  "rootMainFiles": [],
+  "rootMainFiles": [
+    "static/chunks/webpack-91b2d14d0f678b80.js",
+    "static/chunks/fd9d1056-62aaf4b921c84028.js",
+    "static/chunks/23-d7e101d1def3188b.js",
+    "static/chunks/main-app-53009ac29d504d3f.js"
+  ],
   "pages": {
     "/_app": []
   },
