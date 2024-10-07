@@ -6,6 +6,7 @@ import Image from "next/image"
 const getAllItems = async()=>{
   
   const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readall`,{cache: "no-store"});
+  // const response = await fetch("https://fictional-goldfish-rq6w744vq6rfwwrw-3000.app.github.dev/api/item/readall",{cache: "no-store"});
 
   const jsonData = await response.json();
   // console.log(jsonData);
