@@ -77,6 +77,9 @@ const UpdateItem = (context)=>{
             if(loginUserEmail === email){
                 return (
                     <div>
+                        <title>編集ページ:{title}</title>
+                        <meta name="description" content ="アイテム編集ページです"/>
+
                         <h1 className="page-title">アイテム編集</h1>
             
                         <form onSubmit={handleSubmit}>
