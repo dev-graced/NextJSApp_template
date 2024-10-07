@@ -10,7 +10,7 @@ const ImgInput = (props) => {
             data.append("upload_preset","e3khwlgr")
             data.append("cloud_name","dhi0zuslo")
 
-            const response = await fetch("https://api.cloudinary.com/v_1/dhi0zuslo/image/upload",{
+            const response = await fetch("https://api.cloudinary.com/v1_1/dhi0zuslo/image/upload",{
                 method: "POST",
                 body: data
             })
