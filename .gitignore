@@ -2,3 +2,4 @@ node_modules
 rm
 .next
 .next/*
+.vercel
