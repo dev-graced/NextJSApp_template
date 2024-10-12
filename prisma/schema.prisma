@@ -21,7 +21,7 @@ model item {
   image String?
   price String?
   description String?
-  email String @unique
+  email String
 }
 
 model user {
