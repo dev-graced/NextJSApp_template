@@ -5,8 +5,6 @@ import { PrismaClient } from '@prisma/client';
 const connectMongoDB = async() => {
     try {
         await mongoose.connect("mongodb+srv://gracehomondev:EAOXLtaR2hq2Jswx@cluster0.luikv.mongodb.net/nextAppDataBase?retryWrites=true&w=majority&appName=Cluster0", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
         });
         console.log("Success: Connected to MongoDB");
 
