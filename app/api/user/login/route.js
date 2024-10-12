@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { SignJWT } from "jose";
-import connectDB from "../../../utils/database";
+import connectDB, {prisma,dbType} from "../../../utils/database";
 import {UserModel} from "../../../utils/schemaModels";
 
 export async function POST(request) {
@@ -14,7 +14,15 @@ export async function POST(request) {
 
         await connectDB();
 
-        const savedUserData = await UserModel.findOne({email: email});
+        let savedUserData;
+        if(dbType === "postgres"){
+            savedUserData = await prisma.user.findUnique({
+                where: {email: email}
+            })
+        }else if(dbType === "mongo"){
+            savedUserData = await UserModel.findOne({email: email});
+        }
+        
 
         if(savedUserData){
             /** ユーザーデータが存在する場合の処理 */

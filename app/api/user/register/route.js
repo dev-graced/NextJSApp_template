@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectDB from "../../../utils/database";
+import connectDB, {prisma,dbType} from "../../../utils/database";
 import {UserModel} from "../../../utils/schemaModels";
 
 export async function POST(request) {
@@ -12,7 +12,13 @@ export async function POST(request) {
 
         await connectDB();
 
-        await UserModel.create(reqBody);
+        if(dbType === "postgres"){
+            await prisma.user.create({data: reqBody})
+            
+        }else if(dbType === "mongo"){
+            await UserModel.create(reqBody);
+        }
+        
 
         return NextResponse.json({message:"ユーザー登録成功"});
 
