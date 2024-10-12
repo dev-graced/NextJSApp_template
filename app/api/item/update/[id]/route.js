@@ -7,14 +7,14 @@ export async function PUT(request,context) {
     // console.log(context.params.id);
     const reqBody = await request.json();
 
-    const id = parseInt(context.params.id)
-
     /**  アイテム編集の処理　*/
     try{
         await connectDB();
 
         let singleItem;
         if(dbType === "postgres"){
+            const id = parseInt(context.params.id)
+
             singleItem = await prisma.item.findUnique({
                 where: {id: id}
             })
@@ -31,6 +31,8 @@ export async function PUT(request,context) {
             }
 
         }else if(dbType === "mongo"){
+            const id = context.params.id
+
             singleItem =  await ItemModel.findById(id);
 
             if(singleItem.email === reqBody.email){

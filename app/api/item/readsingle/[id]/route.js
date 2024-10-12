@@ -4,19 +4,17 @@ import {ItemModel} from "../../../../utils/schemaModels";
 
 export async function GET(request,context) {
 
-    const id = parseInt(context.params.id)
-
     try{
         await connectDB();
 
         let singleItem;
         if(dbType === "mongo"){
-            singleItem = await ItemModel.findById(id);
+            singleItem = await ItemModel.findById(context.params.id);
 
         }else if(dbType === "postgres"){
             // console.log("dbType = postgres DB")
             singleItem = await prisma.item.findUnique({
-                where: {id: id}
+                where: {id: parseInt(context.params.id)}
             })
         }
 

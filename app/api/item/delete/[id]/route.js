@@ -7,12 +7,13 @@ export async function DELETE(request,context) {
     // console.log(context.params.id);
 
     const reqBody = await request.json();
-    const id = parseInt(context.params.id)
 
     try{
         await connectDB()
     
         if(dbType === "postgres"){
+            const id = parseInt(context.params.id)
+
             const singleItem = await prisma.item.findUnique({
                 where: {id: id}
             });
@@ -28,6 +29,8 @@ export async function DELETE(request,context) {
             }
 
         }else if(dbType === "mongo"){
+            const id = context.params.id
+
             const singleItem =  await ItemModel.findById(id);
 
             if(singleItem.email === reqBody.email){

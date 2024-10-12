@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { dbType } from "@/app/utils/database";
 
 const getSingleItem = async(id)=>{
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`,{cache: "no-store"});
@@ -33,8 +34,8 @@ const ReadSingleItem = async(context)=>{
                 <p>{singleItem.description}</p>
 
                 <div>
-                    <Link href={`/item/update/${singleItem.id}`}>アイテム編集</Link>
-                    <Link href={`/item/delete/${singleItem.id}`}>アイテム削除</Link>
+                    <Link href={`/item/update/${(dbType === "mongo") ? singleItem._id : singleItem.id}`}>アイテム編集</Link>
+                    <Link href={`/item/delete/${(dbType === "mongo") ? singleItem._id : singleItem.id}`}>アイテム削除</Link>
                 </div>
             </div>
         </div>
