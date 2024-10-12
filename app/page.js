@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image"
+import { dbType } from "./utils/database";
 
 const getAllItems = async()=>{
   
@@ -28,8 +29,7 @@ const ReadAllItems = async() => {
     <div className="grid-container-in">
 
       {allItems.map(item => 
-        // <Link href={`/item/readsingle/${item._id}`} key={item._id}> // mongoDB 用
-        <Link href={`/item/readsingle/${item.id}`} key={item.id}>
+          <Link href={`/item/readsingle/${(dbType === "postgres") ? item.id : item._id}`} key={(dbType === "postgres") ? item.id : item._id}>
           <Image src={item.image} width={750} height={500} alt={item.title} priority/>
           <div>
             <h2>{item.price}</h2>
