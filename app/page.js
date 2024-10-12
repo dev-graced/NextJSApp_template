@@ -28,7 +28,8 @@ const ReadAllItems = async() => {
     <div className="grid-container-in">
 
       {allItems.map(item => 
-        <Link href={`/item/readsingle/${item._id}`} key={item._id}>
+        // <Link href={`/item/readsingle/${item._id}`} key={item._id}> // mongoDB 用
+        <Link href={`/item/readsingle/${item.id}`} key={item.id}>
           <Image src={item.image} width={750} height={500} alt={item.title} priority/>
           <div>
             <h2>{item.price}</h2>

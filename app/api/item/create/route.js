@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectDB from "../../../utils/database";
+import connectDB, {prisma,dbType} from "../../../utils/database";
 import {ItemModel} from "../../../utils/schemaModels";
 
 export async function POST(request) {
@@ -9,10 +9,17 @@ export async function POST(request) {
 
     try{
         // console.log(await request.json());
+        await connectDB()
 
-        await connectDB();
+        if(dbType === "postgres"){
+            /** prisma + postgres　用 */
+            await prisma.item.create({data: reqBody})
 
-        await ItemModel.create(reqBody);
+        }else if(dbType === "mongo"){
+            /** mongoose + mongoDB 用 */
+            await ItemModel.create(reqBody);
+
+        }
 
         return NextResponse.json({message:"アイテム作成成功"});
 

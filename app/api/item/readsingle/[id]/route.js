@@ -1,16 +1,24 @@
 import { NextResponse } from "next/server";
-import connectDB from "../../../../utils/database";
+import connectDB, {prisma,dbType} from "../../../../utils/database";
 import {ItemModel} from "../../../../utils/schemaModels";
 
 export async function GET(request,context) {
 
-    // console.log(context.params.id);
+    const id = parseInt(context.params.id)
 
     try{
         await connectDB();
 
-        const singleItem = await ItemModel.findById(context.params.id);
+        let singleItem;
+        if(dbType === "mongo"){
+            singleItem = await ItemModel.findById(id);
 
+        }else if(dbType === "postgres"){
+            // console.log("dbType = postgres DB")
+            singleItem = await prisma.item.findUnique({
+                where: {id: id}
+            })
+        }
 
         return NextResponse.json({message: "アイテム読み取り成功（single）",singleItem: singleItem});
     }catch{

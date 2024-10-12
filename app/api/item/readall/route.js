@@ -1,13 +1,19 @@
 import { NextResponse } from "next/server";
-import connectDB from "../../../utils/database";
+import connectDB, {prisma,dbType} from "../../../utils/database";
 import {ItemModel} from "../../../utils/schemaModels";
 
 export async function GET() {
 
-    try{
-        await connectDB();
+    await connectDB();
 
-        const allItems = await ItemModel.find();
+    let allItems;
+    try{
+        if(dbType === "postgres"){ /** prisma + postgres 用 */
+            allItems = await prisma.item.findMany()
+
+        }else if(dbType === "mongo"){/** mongoose + mongoDB 用 */
+            allItems = await ItemModel.find();
+        }
 
         return NextResponse.json({message: "アイテム読み取り成功（オール）", allItems: allItems});
 

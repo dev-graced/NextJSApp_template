@@ -5,9 +5,9 @@ const getSingleItem = async(id)=>{
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`,{cache: "no-store"});
     
     const jsonData = await response.json();
+    console.log("response",jsonData.message);
   
     const singleItem = jsonData.singleItem;
-    // console.log(singleItem);
   
     return singleItem;
 }
@@ -33,8 +33,8 @@ const ReadSingleItem = async(context)=>{
                 <p>{singleItem.description}</p>
 
                 <div>
-                    <Link href={`/item/update/${singleItem._id}`}>アイテム編集</Link>
-                    <Link href={`/item/delete/${singleItem._id}`}>アイテム削除</Link>
+                    <Link href={`/item/update/${singleItem.id}`}>アイテム編集</Link>
+                    <Link href={`/item/delete/${singleItem.id}`}>アイテム削除</Link>
                 </div>
             </div>
         </div>
