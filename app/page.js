@@ -1,7 +1,7 @@
 //  "use client"
 
 import Link from "next/link";
-import Image from "next/image"
+import Image from "next/image";
 import { dbType } from "./utils/database";
 
 const getAllItems = async()=>{
@@ -16,7 +16,7 @@ const getAllItems = async()=>{
   // console.log(allItems);
 
   return allItems;
-}
+};
 
 const ReadAllItems = async() => {
   // console.log(process.env.NEXT_PUBLIC_URL)
@@ -39,7 +39,7 @@ const ReadAllItems = async() => {
         </Link>
       )};
     </div>
-  )
-}
+  );
+};
 
 export default ReadAllItems;

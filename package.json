@@ -11,9 +11,12 @@
   "dependencies": {
     "@prisma/client": "^5.20.0",
     "@vercel/postgres": "^0.10.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "jose": "^5.9.3",
     "mongoose": "^8.6.3",
     "next": "14.2.13",
+    "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18"
   },

@@ -48,7 +48,7 @@ const Register = ()=>{
 
             <form onSubmit={handleSubmit}> 
                 <input value={name} onChange={(e) => {
-                    setName(e.target.value);
+                    setName(e.target.value)
                     // console.log(e);
                 }} type="text" name="name" placeholder="名前" required/>
 
