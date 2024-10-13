@@ -3,7 +3,6 @@ import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
 import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
 import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-import airbnbBase from 'eslint-config-airbnb-base/index.js'; // Airbnbベースルール
 
 
 export default [
@@ -24,10 +23,8 @@ export default [
   {
     rules: {
       'no-console': 'warn',
-      'semi': ['error','always'],
       ...reactRecommended.rules,  // plugin:react/recommended のルールを直接追加
       ...jsxRuntime.rules,        // plugin:react/jsx-runtime のルールを直接追加
-      ...airbnbBase.rules,       // Airbnb ベースのルールを展開
     },
 
     settings: {
