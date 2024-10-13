@@ -1,6 +1,8 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
+import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 
 
 export default [
@@ -19,11 +21,18 @@ export default [
   pluginReact.configs.flat.recommended,
 
   {
-    extends: [
-      'eslint:recommended',
-      'plugin:react/recommended',
-      'plugin:react/jsx-runtime', // React 17+ の JSX runtime サポートを追加
-    ]
+    rules: {
+      'no-console': 'error',
+      'semi': ['error','always'],
+      ...reactRecommended.rules,  // plugin:react/recommended のルールを直接追加
+      ...jsxRuntime.rules,        // plugin:react/jsx-runtime のルールを直接追加
+    },
+
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   }
 ];
 
