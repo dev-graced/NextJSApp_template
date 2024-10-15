@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useAuth from "../../utils/useAuth";
 import ImgInput from "../../components/imgInput";
-import { log } from "util";
 
 const CreateItem = () => {
   const [title, setTitle] = useState("");
@@ -15,7 +14,7 @@ const CreateItem = () => {
   const router = useRouter();
 
   const loginUserEmail = useAuth();
-  console.log(loginUserEmail);
+  // console.log(loginUserEmail);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +36,7 @@ const CreateItem = () => {
             description: description,
             email: loginUserEmail,
           }),
-        }
+        },
       );
 
       const jsonData = await response.json();
@@ -48,7 +47,7 @@ const CreateItem = () => {
 
       // return jsonData
     } catch {
-      console.log("アイテム作成が失敗しました");
+      // console.log("アイテム作成が失敗しました");
     }
   };
 
